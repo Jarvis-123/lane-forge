@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>LaneForge · Swimlane process builder</title>
+    <meta
+      name="description"
+      content="Build swimlane process maps in the browser. Edit lanes, present to stakeholders, export JSON. Local-first, no account needed."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="LaneForge · Swimlane process builder" />
+    <meta
+      property="og:description"
+      content="Build swimlane process maps in the browser. Edit lanes, present to stakeholders, export JSON. Local-first, no account needed."
+    />
+    <meta property="og:image" content="https://lane-forge.vercel.app/og-share.png" />
+    <meta property="og:image:width" content="1024" />
+    <meta property="og:image:height" content="535" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://lane-forge.vercel.app/og-share.png" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231b1b3a'/%3E%3Crect x='6' y='8' width='20' height='4' rx='2' fill='%239256ff'/%3E%3Crect x='6' y='14' width='13' height='4' rx='2' fill='%239256ff'/%3E%3Crect x='6' y='20' width='17' height='4' rx='2' fill='%239256ff'/%3E%3C/svg%3E"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="bar">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-name">LaneForge</span>
+      </div>
+
+      <div class="bar-group">
+        <label class="sr-only" for="map-picker">Active map</label>
+        <select id="map-picker" class="control"></select>
+
+        <label class="sr-only" for="search">Search steps</label>
+        <input
+          id="search"
+          class="control"
+          type="search"
+          placeholder="Search steps  /"
+          autocomplete="off"
+        />
+      </div>
+
+      <div class="bar-group">
+        <button id="toggle-edit" class="control" aria-pressed="false">Edit</button>
+        <button id="fit-view" class="control">Fit</button>
+        <button id="new-map" class="control">New</button>
+        <button id="import-map" class="control">Import</button>
+        <button id="export-map" class="control">Export</button>
+        <button id="show-help" class="control control-icon" aria-label="Keyboard shortcuts">?</button>
+        <input id="import-file" type="file" accept="application/json" hidden />
+      </div>
+    </header>
+
+    <main id="stage" class="stage">
+      <div id="canvas" class="canvas" role="grid" aria-label="Swimlane process map"></div>
+    </main>
+
+    <aside id="drawer" class="drawer" hidden aria-label="Step details">
+      <div class="drawer-head">
+        <h2 id="drawer-title">Step</h2>
+        <button id="close-drawer" class="control control-icon" aria-label="Close details">×</button>
+      </div>
+      <div id="drawer-body" class="drawer-body"></div>
+    </aside>
+
+    <dialog id="help" class="help">
+      <h2>Keyboard shortcuts</h2>
+      <dl>
+        <dt>E</dt><dd>Toggle edit mode</dd>
+        <dt>F</dt><dd>Fit map to screen</dd>
+        <dt>/</dt><dd>Focus search</dd>
+        <dt>?</dt><dd>Show this list</dd>
+        <dt>Esc</dt><dd>Close panel or exit edit mode</dd>
+      </dl>
+      <p class="help-note">
+        In edit mode, drag any step card into another lane or column. Everything saves to this
+        browser only.
+      </p>
+      <button id="close-help" class="control">Close</button>
+    </dialog>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

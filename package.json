@@ -1,0 +1,11 @@
+{
+  "name": "lane-forge",
+  "version": "0.1.0",
+  "private": false,
+  "description": "Swimlane process builder — local-first, JSON export, presenter mode.",
+  "scripts": {
+    "build": "echo 'Static app — no build step'",
+    "dev": "python3 -m http.server 8080"
+  },
+  "license": "MIT"
+}

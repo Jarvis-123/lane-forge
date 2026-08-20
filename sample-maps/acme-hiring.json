@@ -1,0 +1,121 @@
+{
+  "id": "acme-hiring-sample",
+  "name": "Acme Corp — Hiring Flow",
+  "lanes": [
+    { "id": "lane-hm", "name": "Hiring Manager" },
+    { "id": "lane-ta", "name": "Talent Acquisition" },
+    { "id": "lane-ops", "name": "HR Operations" }
+  ],
+  "steps": [
+    {
+      "id": "step-req",
+      "laneId": "lane-hm",
+      "column": 0,
+      "title": "Raise requisition",
+      "summary": "Define the role, level, and budget before anything opens.",
+      "owner": "Hiring Manager",
+      "duration": "1 day",
+      "systems": ["ATS"],
+      "link": ""
+    },
+    {
+      "id": "step-intake",
+      "laneId": "lane-ta",
+      "column": 1,
+      "title": "Intake call",
+      "summary": "Agree the scorecard, must-haves, and sourcing plan.",
+      "owner": "Recruiter",
+      "duration": "45 min",
+      "systems": ["ATS"],
+      "link": ""
+    },
+    {
+      "id": "step-source",
+      "laneId": "lane-ta",
+      "column": 2,
+      "title": "Source and screen",
+      "summary": "Build the pipeline and run first-round screens.",
+      "owner": "Recruiter",
+      "duration": "2 weeks",
+      "systems": ["ATS", "LinkedIn"],
+      "link": ""
+    },
+    {
+      "id": "step-panel",
+      "laneId": "lane-hm",
+      "column": 3,
+      "title": "Panel interviews",
+      "summary": "Structured loop with one scorecard per interviewer.",
+      "owner": "Panel",
+      "duration": "1 week",
+      "systems": ["ATS", "Calendar"],
+      "link": ""
+    },
+    {
+      "id": "step-debrief",
+      "laneId": "lane-ta",
+      "column": 4,
+      "title": "Debrief",
+      "summary": "Consolidate scores and make a documented decision.",
+      "owner": "Recruiter",
+      "duration": "2 days",
+      "systems": ["ATS"],
+      "link": ""
+    },
+    {
+      "id": "step-approve",
+      "laneId": "lane-hm",
+      "column": 5,
+      "title": "Approve offer",
+      "summary": "Confirm level and compensation against the band.",
+      "owner": "Hiring Manager",
+      "duration": "1 day",
+      "systems": ["HRMS"],
+      "link": ""
+    },
+    {
+      "id": "step-offer",
+      "laneId": "lane-ta",
+      "column": 6,
+      "title": "Extend offer",
+      "summary": "Verbal first, written the same day.",
+      "owner": "Recruiter",
+      "duration": "1 day",
+      "systems": ["HRMS"],
+      "link": ""
+    },
+    {
+      "id": "step-bgv",
+      "laneId": "lane-ops",
+      "column": 7,
+      "title": "Background check",
+      "summary": "Initiate with the vendor and track turnaround daily.",
+      "owner": "HR Ops",
+      "duration": "5 days",
+      "systems": ["Vendor portal"],
+      "link": ""
+    },
+    {
+      "id": "step-onboard",
+      "laneId": "lane-ops",
+      "column": 8,
+      "title": "Onboarding setup",
+      "summary": "Accounts, assets, and a written day-one plan.",
+      "owner": "HR Ops",
+      "duration": "3 days",
+      "systems": ["HRMS", "IT"],
+      "link": ""
+    },
+    {
+      "id": "step-dayone",
+      "laneId": "lane-ops",
+      "column": 9,
+      "title": "Day one",
+      "summary": "Induction, buddy assignment, manager check-in.",
+      "owner": "HR Ops",
+      "duration": "1 day",
+      "systems": ["HRMS"],
+      "link": ""
+    }
+  ]
+}
